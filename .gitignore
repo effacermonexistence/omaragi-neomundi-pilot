@@ -1,0 +1,43 @@
+# System files
+.DS_Store
+__MACOSX/
+
+# Secrets / env
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa*
+id_ed25519*
+
+# Logs / scratch
+*.log
+logs/
+tmp/
+temp/
+.cache/
+.omx/
+
+# Raw/private pilot materials
+raw/
+private/
+internal/
+scratch/
+backups/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Node/Python caches
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Private ControlTower intake screenshots / browser captures
+controltower_pilot02_intake/

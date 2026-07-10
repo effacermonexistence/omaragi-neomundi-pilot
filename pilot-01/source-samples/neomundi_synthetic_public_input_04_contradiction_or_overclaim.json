@@ -1,0 +1,46 @@
+{
+  "sample_schema_version": "neomundi.observation.synthetic_public_example.v0.1",
+  "sample_type": "synthetic_public_redacted_neomundi_input",
+  "public_example": true,
+  "synthetic_observation_id": "nm-ogs-syn-004",
+  "case_label": "contradiction_or_overclaim",
+  "source_system_alias": "synthetic_system_delta",
+  "source_prompt_class": "high_stakes_explanatory",
+  "maps_to_revas_artifact": "../artifacts/final_04_contradiction_or_overclaim_revas_artifact.json",
+  "neomundi_observation_signal": {
+    "measurement_status": "complete",
+    "measurement_coverage": null,
+    "stability_score": 0.63,
+    "coherence_score": 0.42,
+    "factual_validity_status": "contradiction_or_overclaim_signal",
+    "factual_hallucination_score": 0.67,
+    "semantic_variability_status": "elevated",
+    "semantic_instability_score": 0.44,
+    "risk_level": "high",
+    "risk_types": [
+      "contradiction_signal",
+      "overclaim_signal",
+      "factual_risk"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data, private URL, account data, credential, or proprietary operational metadata is included.",
+      "This synthetic payload is a runtime observability input only.",
+      "It does not establish truth, safety, authority, downstream permission, production readiness, or execution admissibility."
+    ],
+    "known_limitations": [
+      "A contradiction or overclaim signal is not a legal, safety or factual verdict.",
+      "Human review and independent evidence would still be required."
+    ]
+  },
+  "expected_revas_route": {
+    "revas_decision": "BLOCK_OR_HUMAN_REVIEW",
+    "admissibility_status": "not_admissible_without_human_or_stronger_verifier",
+    "required_next_step": "Collect raw evidence/provenance and run contradiction-focused verifier; human review if high-stakes."
+  },
+  "redaction_notes": [
+    "Synthetic sample retained only the public-safe measurement fields needed to illustrate signal flow.",
+    "Removed or omitted raw prompts, raw outputs, timestamps, account identifiers, private URLs, emails, keys, tokens, internal traces, and operational logs.",
+    "Source aliases are synthetic placeholders and are not production model, provider, account, customer, or deployment identifiers."
+  ]
+}

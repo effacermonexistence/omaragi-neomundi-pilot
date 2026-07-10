@@ -1,0 +1,112 @@
+{
+  "artifact_schema_version": "omaragi.revas.neomundi.scored_artifact.v0.1",
+  "source_observation_id": "nm-ogs-syn-005",
+  "source_trace_id": "syn-trace-005",
+  "source_model_alias": "system_epsilon",
+  "source_prompt_class": "partial_observation",
+  "neomundi_measurement_summary": {
+    "measurement_status": "partial",
+    "measurement_coverage": 0.54,
+    "stability_score": 0.92,
+    "coherence_score": 0.79,
+    "factual_validity_status": "not_assessed",
+    "factual_hallucination_score": null,
+    "semantic_variability_status": "low_observed_variability",
+    "semantic_instability_score": 0.08,
+    "risk_level": "medium",
+    "risk_types": [
+      "incomplete_observation",
+      "coverage_limitation"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data or proprietary schema is included.",
+      "This synthetic payload is a runtime observation input only.",
+      "It does not establish truth, safety, authority, downstream permission or execution admissibility."
+    ],
+    "known_limitations": [
+      "Observed stability must not be interpreted as complete evidence.",
+      "Missing measurement dimensions may materially change downstream admissibility."
+    ]
+  },
+  "revas_decision": "DEFER_PENDING_MEASUREMENT",
+  "revas_action": "Do not adopt. Request missing measurement coverage and rerun NeoMundi observation before REVAS admission.",
+  "admissibility_status": "not_admissible_measurement_incomplete",
+  "confidence_score": 0.74,
+  "risk_score": 0.55,
+  "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+  "uncertainty_preserved": true,
+  "required_next_step": "Run complete observation pass with factual, semantic, stability, and risk coverage.",
+  "rationale": "Measurement is incomplete or coverage-limited; REVAS cannot convert partial observation into admissible action. Risk types: incomplete_observation, coverage_limitation.",
+  "limitations": [
+    "Synthetic public pilot example; not production evidence.",
+    "NeoMundi behavioral signal is not raw truth or final verifier output.",
+    "No raw prompts, raw model outputs, providers, customers, or hidden data inferred.",
+    "Original NeoMundi measurement fields are preserved; REVAS interpretation is separate."
+  ],
+  "boundary_notes": [
+    "REVAS interpretation layer only: proof before action, adoption gates before downstream use.",
+    "No legal/safety/execution admissibility claimed from NeoMundi signal alone.",
+    "Fallback safety applies if required verifier/evidence is missing."
+  ],
+  "revas_pipeline": {
+    "router": {
+      "route_family": "PARTIAL_MEASUREMENT_ROUTE",
+      "routing_reason": "Partial measurement, incomplete_observation and coverage_limitation risk types, factual validity not assessed.",
+      "source_signals_used": {
+        "measurement_status": "partial",
+        "factual_validity_status": "not_assessed",
+        "semantic_variability_status": "low_observed_variability",
+        "risk_level": "medium",
+        "risk_types": [
+          "incomplete_observation",
+          "coverage_limitation"
+        ],
+        "stability_score": 0.92,
+        "coherence_score": 0.79,
+        "factual_hallucination_score": null,
+        "semantic_instability_score": 0.08
+      }
+    },
+    "executor": {
+      "executor_status": "not_executed",
+      "executor_type": "none_for_pilot_observation_only",
+      "executor_result": null,
+      "reason_if_not_executed": "NeoMundi payload contains behavioral measurement signals only; no raw prompt, raw model output, external evidence, or task object was supplied for deterministic execution."
+    },
+    "verifier": {
+      "verifier_status": "deferred_pending_measurement",
+      "verifier_type": "measurement_coverage_verifier",
+      "verification_requirement": "Complete missing measurement dimensions before factual or semantic admissibility is judged.",
+      "verifier_reason": "Observed stability is partial and cannot stand in for full measurement coverage."
+    },
+    "adoption_gate": {
+      "gate_decision": "defer_pending_measurement",
+      "allowed_use": [
+        "internal pilot backlog item",
+        "measurement completion request"
+      ],
+      "blocked_use": [
+        "adoption",
+        "external claim",
+        "execution",
+        "truth assertion"
+      ],
+      "admissibility_status": "not_admissible_measurement_incomplete",
+      "fallback_policy": "Fallback to deferral until complete observation pass exists."
+    },
+    "scored_artifact": {
+      "confidence_score": 0.74,
+      "risk_score": 0.55,
+      "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+      "uncertainty_preserved": true,
+      "required_next_step": "Run complete observation pass with factual, semantic, stability, and risk coverage.",
+      "rationale": "Measurement is incomplete or coverage-limited; REVAS cannot convert partial observation into admissible action. Risk types: incomplete_observation, coverage_limitation."
+    }
+  },
+  "public_release_boundary": [
+    "This artifact is a sanitized public REVAS example for the OmarAGI × NeoMundi technical pilot.",
+    "It is not a production record, customer record, certification, endorsement, or proof of deployment.",
+    "No raw prompt, raw model output, provider account, customer data, private URL, credential, or operational secret is included."
+  ]
+}

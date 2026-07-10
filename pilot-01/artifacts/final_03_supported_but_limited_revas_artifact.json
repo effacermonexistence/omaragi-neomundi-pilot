@@ -1,0 +1,110 @@
+{
+  "artifact_schema_version": "omaragi.revas.neomundi.scored_artifact.v0.1",
+  "source_observation_id": "nm-ogs-syn-003",
+  "source_trace_id": "syn-trace-003",
+  "source_model_alias": "system_gamma",
+  "source_prompt_class": "bounded_reference_task",
+  "neomundi_measurement_summary": {
+    "measurement_status": "complete",
+    "measurement_coverage": null,
+    "stability_score": 0.91,
+    "coherence_score": 0.9,
+    "factual_validity_status": "supported_with_limitations",
+    "factual_hallucination_score": 0.08,
+    "semantic_variability_status": "low",
+    "semantic_instability_score": 0.1,
+    "risk_level": "low",
+    "risk_types": [
+      "scope_limitation"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data or proprietary schema is included.",
+      "This synthetic payload is a runtime observation input only.",
+      "It does not establish truth, safety, authority, downstream permission or execution admissibility."
+    ],
+    "known_limitations": [
+      "The signal is bounded to the observed task context.",
+      "Support does not establish general reliability outside the measured scope."
+    ]
+  },
+  "revas_decision": "ALLOW_BOUNDED",
+  "revas_action": "Allow only bounded/non-final use with source boundary, no expansion beyond measured support.",
+  "admissibility_status": "bounded_admissible_non_final",
+  "confidence_score": 0.82,
+  "risk_score": 0.25,
+  "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+  "uncertainty_preserved": false,
+  "required_next_step": "Attach support boundary and route log; permit low-risk bounded artifact generation.",
+  "rationale": "Supported-with-limitations and low hallucination/risk fits bounded REVAS admission; scope limitation must travel with the artifact. Risk types: scope_limitation.",
+  "limitations": [
+    "Synthetic public pilot example; not production evidence.",
+    "NeoMundi behavioral signal is not raw truth or final verifier output.",
+    "No raw prompts, raw model outputs, providers, customers, or hidden data inferred.",
+    "Original NeoMundi measurement fields are preserved; REVAS interpretation is separate."
+  ],
+  "boundary_notes": [
+    "REVAS interpretation layer only: proof before action, adoption gates before downstream use.",
+    "No legal/safety/execution admissibility claimed from NeoMundi signal alone.",
+    "Fallback safety applies if required verifier/evidence is missing."
+  ],
+  "revas_pipeline": {
+    "router": {
+      "route_family": "SUPPORTED_LIMITED_SCOPE_ROUTE",
+      "routing_reason": "Supported-with-limitations factual signal, low risk, low hallucination score, and scope_limitation risk type.",
+      "source_signals_used": {
+        "measurement_status": "complete",
+        "factual_validity_status": "supported_with_limitations",
+        "semantic_variability_status": "low",
+        "risk_level": "low",
+        "risk_types": [
+          "scope_limitation"
+        ],
+        "stability_score": 0.91,
+        "coherence_score": 0.9,
+        "factual_hallucination_score": 0.08,
+        "semantic_instability_score": 0.1
+      }
+    },
+    "executor": {
+      "executor_status": "not_executed",
+      "executor_type": "none_for_pilot_observation_only",
+      "executor_result": null,
+      "reason_if_not_executed": "NeoMundi payload contains behavioral measurement signals only; no raw prompt, raw model output, external evidence, or task object was supplied for deterministic execution."
+    },
+    "verifier": {
+      "verifier_status": "optional_or_required_by_downstream_risk",
+      "verifier_type": "scope_boundary_checker",
+      "verification_requirement": "Confirm downstream use remains inside the bounded reference/task scope.",
+      "verifier_reason": "Payload indicates support only within measured scope; generalization outside scope is not admitted."
+    },
+    "adoption_gate": {
+      "gate_decision": "bounded_allow",
+      "allowed_use": [
+        "bounded non-final artifact",
+        "internal pilot mapping",
+        "low-risk scoped summary"
+      ],
+      "blocked_use": [
+        "general reliability claim",
+        "out-of-scope reuse",
+        "autonomous execution outside measured support"
+      ],
+      "admissibility_status": "bounded_admissible_non_final",
+      "fallback_policy": "If downstream scope exceeds measured support, route to uncertainty or human review instead of broad adoption."
+    },
+    "scored_artifact": {
+      "confidence_score": 0.82,
+      "risk_score": 0.25,
+      "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+      "uncertainty_preserved": false,
+      "required_next_step": "Attach support boundary and route log; permit low-risk bounded artifact generation.",
+      "rationale": "Supported-with-limitations and low hallucination/risk fits bounded REVAS admission; scope limitation must travel with the artifact. Risk types: scope_limitation."
+    }
+  },
+  "public_release_boundary": [
+    "This artifact is a sanitized public REVAS example for the OmarAGI × NeoMundi technical pilot.",
+    "It is not a production record, customer record, certification, endorsement, or proof of deployment.",
+    "No raw prompt, raw model output, provider account, customer data, private URL, credential, or operational secret is included."
+  ]
+}

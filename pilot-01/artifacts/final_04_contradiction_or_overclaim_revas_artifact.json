@@ -1,0 +1,113 @@
+{
+  "artifact_schema_version": "omaragi.revas.neomundi.scored_artifact.v0.1",
+  "source_observation_id": "nm-ogs-syn-004",
+  "source_trace_id": "syn-trace-004",
+  "source_model_alias": "system_delta",
+  "source_prompt_class": "high_stakes_explanatory",
+  "neomundi_measurement_summary": {
+    "measurement_status": "complete",
+    "measurement_coverage": null,
+    "stability_score": 0.63,
+    "coherence_score": 0.42,
+    "factual_validity_status": "contradiction_or_overclaim_signal",
+    "factual_hallucination_score": 0.67,
+    "semantic_variability_status": "elevated",
+    "semantic_instability_score": 0.44,
+    "risk_level": "high",
+    "risk_types": [
+      "contradiction_signal",
+      "overclaim_signal",
+      "factual_risk"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data or proprietary schema is included.",
+      "This synthetic payload is a runtime observation input only.",
+      "It does not establish truth, safety, authority, downstream permission or execution admissibility."
+    ],
+    "known_limitations": [
+      "A contradiction or overclaim signal is not a legal, safety or factual verdict.",
+      "Human review and independent evidence would still be required."
+    ]
+  },
+  "revas_decision": "BLOCK_OR_HUMAN_REVIEW",
+  "revas_action": "Block autonomous adoption. Route to human/reviewer or stronger verifier before downstream use.",
+  "admissibility_status": "not_admissible_without_human_or_stronger_verifier",
+  "confidence_score": 0.86,
+  "risk_score": 0.82,
+  "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+  "uncertainty_preserved": true,
+  "required_next_step": "Collect raw evidence/provenance and run contradiction-focused verifier; human review if high-stakes.",
+  "rationale": "Contradiction, overclaim, or factual-risk signal violates REVAS proof-before-action threshold. Risk types: contradiction_signal, overclaim_signal, factual_risk.",
+  "limitations": [
+    "Synthetic public pilot example; not production evidence.",
+    "NeoMundi behavioral signal is not raw truth or final verifier output.",
+    "No raw prompts, raw model outputs, providers, customers, or hidden data inferred.",
+    "Original NeoMundi measurement fields are preserved; REVAS interpretation is separate."
+  ],
+  "boundary_notes": [
+    "REVAS interpretation layer only: proof before action, adoption gates before downstream use.",
+    "No legal/safety/execution admissibility claimed from NeoMundi signal alone.",
+    "Fallback safety applies if required verifier/evidence is missing."
+  ],
+  "revas_pipeline": {
+    "router": {
+      "route_family": "CONTRADICTION_OVERCLAIM_ROUTE",
+      "routing_reason": "Contradiction/overclaim factual signal, high risk, and contradiction_signal/overclaim_signal/factual_risk types.",
+      "source_signals_used": {
+        "measurement_status": "complete",
+        "factual_validity_status": "contradiction_or_overclaim_signal",
+        "semantic_variability_status": "elevated",
+        "risk_level": "high",
+        "risk_types": [
+          "contradiction_signal",
+          "overclaim_signal",
+          "factual_risk"
+        ],
+        "stability_score": 0.63,
+        "coherence_score": 0.42,
+        "factual_hallucination_score": 0.67,
+        "semantic_instability_score": 0.44
+      }
+    },
+    "executor": {
+      "executor_status": "not_executed",
+      "executor_type": "none_for_pilot_observation_only",
+      "executor_result": null,
+      "reason_if_not_executed": "NeoMundi payload contains behavioral measurement signals only; no raw prompt, raw model output, external evidence, or task object was supplied for deterministic execution."
+    },
+    "verifier": {
+      "verifier_status": "required_not_executed",
+      "verifier_type": "contradiction_and_evidence_verifier_plus_human_review",
+      "verification_requirement": "Collect raw evidence/provenance and perform contradiction-focused verification before any use.",
+      "verifier_reason": "The observation flags high factual risk; NeoMundi signal alone is not a verdict but it blocks autonomous adoption."
+    },
+    "adoption_gate": {
+      "gate_decision": "block_or_human_review",
+      "allowed_use": [
+        "internal risk triage",
+        "human review packet"
+      ],
+      "blocked_use": [
+        "autonomous adoption",
+        "external factual/safety/legal claim",
+        "execution"
+      ],
+      "admissibility_status": "not_admissible_without_human_or_stronger_verifier",
+      "fallback_policy": "Fallback to non-adoption and human/reviewer path unless stronger verifier clears the contradiction/overclaim risk."
+    },
+    "scored_artifact": {
+      "confidence_score": 0.86,
+      "risk_score": 0.82,
+      "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+      "uncertainty_preserved": true,
+      "required_next_step": "Collect raw evidence/provenance and run contradiction-focused verifier; human review if high-stakes.",
+      "rationale": "Contradiction, overclaim, or factual-risk signal violates REVAS proof-before-action threshold. Risk types: contradiction_signal, overclaim_signal, factual_risk."
+    }
+  },
+  "public_release_boundary": [
+    "This artifact is a sanitized public REVAS example for the OmarAGI × NeoMundi technical pilot.",
+    "It is not a production record, customer record, certification, endorsement, or proof of deployment.",
+    "No raw prompt, raw model output, provider account, customer data, private URL, credential, or operational secret is included."
+  ]
+}

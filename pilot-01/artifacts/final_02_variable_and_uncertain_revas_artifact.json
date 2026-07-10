@@ -1,0 +1,111 @@
+{
+  "artifact_schema_version": "omaragi.revas.neomundi.scored_artifact.v0.1",
+  "source_observation_id": "nm-ogs-syn-002",
+  "source_trace_id": "syn-trace-002",
+  "source_model_alias": "system_beta",
+  "source_prompt_class": "ambiguous_reasoning",
+  "neomundi_measurement_summary": {
+    "measurement_status": "complete",
+    "measurement_coverage": null,
+    "stability_score": 0.57,
+    "coherence_score": 0.61,
+    "factual_validity_status": "uncertain",
+    "factual_hallucination_score": 0.29,
+    "semantic_variability_status": "elevated",
+    "semantic_instability_score": 0.58,
+    "risk_level": "high",
+    "risk_types": [
+      "semantic_variability",
+      "uncertainty"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data or proprietary schema is included.",
+      "This synthetic payload is a runtime observation input only.",
+      "It does not establish truth, safety, authority, downstream permission or execution admissibility."
+    ],
+    "known_limitations": [
+      "The observed instability does not identify the underlying cause.",
+      "No claim can be made about which generated interpretation is correct."
+    ]
+  },
+  "revas_decision": "ESCALATE_UNCERTAINTY",
+  "revas_action": "Preserve uncertainty; do not collapse to a single confident answer. Require bounded restatement or additional measurement.",
+  "admissibility_status": "not_admissible_until_uncertainty_reduced",
+  "confidence_score": 0.78,
+  "risk_score": 0.82,
+  "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+  "uncertainty_preserved": true,
+  "required_next_step": "Ask ControlTower for repeated challenge/perturbation runs and uncertainty-preserving output.",
+  "rationale": "Semantic variability and uncertainty are material risk signals; REVAS preserves uncertainty instead of adopting a single confident output. Risk types: semantic_variability, uncertainty.",
+  "limitations": [
+    "Synthetic public pilot example; not production evidence.",
+    "NeoMundi behavioral signal is not raw truth or final verifier output.",
+    "No raw prompts, raw model outputs, providers, customers, or hidden data inferred.",
+    "Original NeoMundi measurement fields are preserved; REVAS interpretation is separate."
+  ],
+  "boundary_notes": [
+    "REVAS interpretation layer only: proof before action, adoption gates before downstream use.",
+    "No legal/safety/execution admissibility claimed from NeoMundi signal alone.",
+    "Fallback safety applies if required verifier/evidence is missing."
+  ],
+  "revas_pipeline": {
+    "router": {
+      "route_family": "SEMANTIC_VARIABILITY_UNCERTAINTY_ROUTE",
+      "routing_reason": "Elevated semantic variability, high risk level, uncertainty risk type, and uncertain factual status.",
+      "source_signals_used": {
+        "measurement_status": "complete",
+        "factual_validity_status": "uncertain",
+        "semantic_variability_status": "elevated",
+        "risk_level": "high",
+        "risk_types": [
+          "semantic_variability",
+          "uncertainty"
+        ],
+        "stability_score": 0.57,
+        "coherence_score": 0.61,
+        "factual_hallucination_score": 0.29,
+        "semantic_instability_score": 0.58
+      }
+    },
+    "executor": {
+      "executor_status": "not_executed",
+      "executor_type": "none_for_pilot_observation_only",
+      "executor_result": null,
+      "reason_if_not_executed": "NeoMundi payload contains behavioral measurement signals only; no raw prompt, raw model output, external evidence, or task object was supplied for deterministic execution."
+    },
+    "verifier": {
+      "verifier_status": "recommended_not_executed",
+      "verifier_type": "repeatability_challenge_verifier",
+      "verification_requirement": "Run repeated perturbation/challenge observations to determine whether answer meaning stabilizes.",
+      "verifier_reason": "No raw outputs or repeated traces are included; uncertainty must be preserved rather than collapsed."
+    },
+    "adoption_gate": {
+      "gate_decision": "escalate_uncertainty",
+      "allowed_use": [
+        "uncertainty-preserving internal analysis",
+        "follow-up ControlTower request design"
+      ],
+      "blocked_use": [
+        "single confident final answer",
+        "external claim",
+        "autonomous action"
+      ],
+      "admissibility_status": "not_admissible_until_uncertainty_reduced",
+      "fallback_policy": "Fallback to uncertainty-preserving response until repeatability evidence reduces semantic instability."
+    },
+    "scored_artifact": {
+      "confidence_score": 0.78,
+      "risk_score": 0.82,
+      "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+      "uncertainty_preserved": true,
+      "required_next_step": "Ask ControlTower for repeated challenge/perturbation runs and uncertainty-preserving output.",
+      "rationale": "Semantic variability and uncertainty are material risk signals; REVAS preserves uncertainty instead of adopting a single confident output. Risk types: semantic_variability, uncertainty."
+    }
+  },
+  "public_release_boundary": [
+    "This artifact is a sanitized public REVAS example for the OmarAGI × NeoMundi technical pilot.",
+    "It is not a production record, customer record, certification, endorsement, or proof of deployment.",
+    "No raw prompt, raw model output, provider account, customer data, private URL, credential, or operational secret is included."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "sample_schema_version": "neomundi.observation.synthetic_public_example.v0.1",
+  "sample_type": "synthetic_public_redacted_neomundi_input",
+  "public_example": true,
+  "synthetic_observation_id": "nm-ogs-syn-001",
+  "case_label": "stable_but_fragile",
+  "source_system_alias": "synthetic_system_alpha",
+  "source_prompt_class": "general_explanatory",
+  "maps_to_revas_artifact": "../artifacts/final_01_stable_but_fragile_revas_artifact.json",
+  "neomundi_observation_signal": {
+    "measurement_status": "complete",
+    "measurement_coverage": null,
+    "stability_score": 0.94,
+    "coherence_score": 0.88,
+    "factual_validity_status": "fragile",
+    "factual_hallucination_score": 0.41,
+    "semantic_variability_status": "low",
+    "semantic_instability_score": 0.06,
+    "risk_level": "medium",
+    "risk_types": [
+      "factual_fragility"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data, private URL, account data, credential, or proprietary operational metadata is included.",
+      "This synthetic payload is a runtime observability input only.",
+      "It does not establish truth, safety, authority, downstream permission, production readiness, or execution admissibility."
+    ],
+    "known_limitations": [
+      "Low semantic variability does not demonstrate factual correctness.",
+      "No external grounding or independent verification evidence is supplied."
+    ]
+  },
+  "expected_revas_route": {
+    "revas_decision": "ALLOW_WITH_FACTUAL_CAUTION",
+    "admissibility_status": "bounded_admissible_with_factual_verification_required",
+    "required_next_step": "Verify factual claims against primary sources or deterministic checker before public/execution use."
+  },
+  "redaction_notes": [
+    "Synthetic sample retained only the public-safe measurement fields needed to illustrate signal flow.",
+    "Removed or omitted raw prompts, raw outputs, timestamps, account identifiers, private URLs, emails, keys, tokens, internal traces, and operational logs.",
+    "Source aliases are synthetic placeholders and are not production model, provider, account, customer, or deployment identifiers."
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "artifact_schema_version": "omaragi.revas.neomundi.scored_artifact.v0.1",
+  "source_observation_id": "nm-ogs-syn-001",
+  "source_trace_id": "syn-trace-001",
+  "source_model_alias": "system_alpha",
+  "source_prompt_class": "general_explanatory",
+  "neomundi_measurement_summary": {
+    "measurement_status": "complete",
+    "measurement_coverage": null,
+    "stability_score": 0.94,
+    "coherence_score": 0.88,
+    "factual_validity_status": "fragile",
+    "factual_hallucination_score": 0.41,
+    "semantic_variability_status": "low",
+    "semantic_instability_score": 0.06,
+    "risk_level": "medium",
+    "risk_types": [
+      "factual_fragility"
+    ],
+    "measurement_boundary": [
+      "Synthetic public example for an early, non-production interoperability pilot.",
+      "No raw prompt, raw model output, provider identity, customer data or proprietary schema is included.",
+      "This synthetic payload is a runtime observation input only.",
+      "It does not establish truth, safety, authority, downstream permission or execution admissibility."
+    ],
+    "known_limitations": [
+      "Low semantic variability does not demonstrate factual correctness.",
+      "No external grounding or independent verification evidence is supplied."
+    ]
+  },
+  "revas_decision": "ALLOW_WITH_FACTUAL_CAUTION",
+  "revas_action": "Allow bounded draft/analysis only with explicit factual caution and required source verification before external claim.",
+  "admissibility_status": "bounded_admissible_with_factual_verification_required",
+  "confidence_score": 0.8,
+  "risk_score": 0.45,
+  "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+  "uncertainty_preserved": true,
+  "required_next_step": "Verify factual claims against primary sources or deterministic checker before public/execution use.",
+  "rationale": "Stable/coherent behavior can still hide factual fragility; REVAS preserves the fragility instead of upgrading it to truth. Risk types: factual_fragility.",
+  "limitations": [
+    "Synthetic public pilot example; not production evidence.",
+    "NeoMundi behavioral signal is not raw truth or final verifier output.",
+    "No raw prompts, raw model outputs, providers, customers, or hidden data inferred.",
+    "Original NeoMundi measurement fields are preserved; REVAS interpretation is separate."
+  ],
+  "boundary_notes": [
+    "REVAS interpretation layer only: proof before action, adoption gates before downstream use.",
+    "No legal/safety/execution admissibility claimed from NeoMundi signal alone.",
+    "Fallback safety applies if required verifier/evidence is missing."
+  ],
+  "revas_pipeline": {
+    "router": {
+      "route_family": "FACTUAL_FRAGILITY_ROUTE",
+      "routing_reason": "High stability/coherence with factual fragility signal and factual_fragility risk type.",
+      "source_signals_used": {
+        "measurement_status": "complete",
+        "factual_validity_status": "fragile",
+        "semantic_variability_status": "low",
+        "risk_level": "medium",
+        "risk_types": [
+          "factual_fragility"
+        ],
+        "stability_score": 0.94,
+        "coherence_score": 0.88,
+        "factual_hallucination_score": 0.41,
+        "semantic_instability_score": 0.06
+      }
+    },
+    "executor": {
+      "executor_status": "not_executed",
+      "executor_type": "none_for_pilot_observation_only",
+      "executor_result": null,
+      "reason_if_not_executed": "NeoMundi payload contains behavioral measurement signals only; no raw prompt, raw model output, external evidence, or task object was supplied for deterministic execution."
+    },
+    "verifier": {
+      "verifier_status": "required_not_executed",
+      "verifier_type": "factual_source_verifier_or_deterministic_fact_checker",
+      "verification_requirement": "Verify material factual claims against primary/external evidence before any external claim or execution.",
+      "verifier_reason": "Stable behavior is not factual proof; no external grounding evidence is present in the payload."
+    },
+    "adoption_gate": {
+      "gate_decision": "bounded_allow_with_factual_caution",
+      "allowed_use": [
+        "internal analysis",
+        "bounded draft",
+        "pilot scoring artifact"
+      ],
+      "blocked_use": [
+        "external factual claim",
+        "autonomous execution",
+        "truth/safety/legal assertion"
+      ],
+      "admissibility_status": "bounded_admissible_with_factual_verification_required",
+      "fallback_policy": "If factual verifier is unavailable or fails, preserve caution and do not adopt beyond bounded draft/analysis."
+    },
+    "scored_artifact": {
+      "confidence_score": 0.8,
+      "risk_score": 0.45,
+      "score_semantics": "First-pass REVAS-side routing estimates, not calibrated production metrics.",
+      "uncertainty_preserved": true,
+      "required_next_step": "Verify factual claims against primary sources or deterministic checker before public/execution use.",
+      "rationale": "Stable/coherent behavior can still hide factual fragility; REVAS preserves the fragility instead of upgrading it to truth. Risk types: factual_fragility."
+    }
+  },
+  "public_release_boundary": [
+    "This artifact is a sanitized public REVAS example for the OmarAGI × NeoMundi technical pilot.",
+    "It is not a production record, customer record, certification, endorsement, or proof of deployment.",
+    "No raw prompt, raw model output, provider account, customer data, private URL, credential, or operational secret is included."
+  ]
+}
