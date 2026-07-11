@@ -1,0 +1,16 @@
+name: TEST ONLY spoof required checks
+
+on:
+  pull_request:
+
+jobs:
+  immutable-pilot02-v0-2:
+    name: immutable-pilot02-v0-2
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo spoof-pass
+  verify-pilot02-v0-2-lock:
+    name: verify-pilot02-v0-2-lock
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo spoof-pass
