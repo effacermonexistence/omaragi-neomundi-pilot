@@ -2,6 +2,8 @@
 
 Status: planned, not executed.
 
+Protocol authority: [`protocol-lock/v0.2/pilot02_endpoint_lock.json`](protocol-lock/v0.2/pilot02_endpoint_lock.json). This plan cannot override that endpoint architecture.
+
 ## Target
 
 A focused ControlTower request batch. The exact request count, task mix, and operating constraints should be confirmed before execution.
@@ -25,7 +27,7 @@ Test whether NeoMundi runtime observability signal outputs can be repeatedly map
 
 ## Success criteria
 
-A useful live test would show whether the signal-to-decision mapping is repeatable, conservative, auditable, and boundary-preserving. It does not require every observation to be favorable.
+A positive Pilot 02 result requires the ordered, non-compensatory quality/safety and resource/economic gates in the v0.2 endpoint lock. Track-specific decision metrics and H5 comparisons must follow the same lock. A negative but informative result remains reportable.
 
 ## Boundary
 

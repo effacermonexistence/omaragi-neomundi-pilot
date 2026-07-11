@@ -1,0 +1,18 @@
+{
+  "manifest_version": "1.0.0",
+  "lock_id": "pilot02-endpoint-v0.2",
+  "hash_algorithm": "SHA-256",
+  "generated_at": "2026-07-11T02:01:50.691038+00:00",
+  "sha256": {
+    "AGENTS.md": "d404f9df14f3a032af39a8318d53c1d3f3f6fdf03c975fcfaae16f071f046bda",
+    "pilot-02/README.md": "960f691a700271da99142d5d4e0771555fdb4c50c35bc04dd15f6923015d1b6e",
+    "pilot-02/controltower-live-test-plan.md": "aaa7f9c8b3021269b539b595ce7d2daad4f250bcd46aeb2363aa6df663754eb6",
+    "pilot-02/protocol-lock/v0.2/README.md": "98e1f1168bd1799794183a270ea5ef57d6421c2a6500290aa745ac3735149c75",
+    "pilot-02/protocol-lock/v0.2/PILOT02_ENDPOINT_LOCK.md": "1cfdeb403f86bc37512968a41bc95acc268a7a553fb6146d2ced9c7b6c3c46f3",
+    "pilot-02/protocol-lock/v0.2/pilot02_endpoint_lock.json": "51e963fefd154e80b89b3e3857e7f7aa2526284ec376d14a99343ef9d11452ab",
+    "pilot-02/protocol-lock/v0.2/CHANGE_CONTROL.md": "46b06b9bcf2e268f6aa7ca01b363b24916a0c0a6cc654f912f7014a59d6a444f",
+    "tools/verify_pilot02_lock.py": "a8f23f28fd646419e774743fb7f775877306b70c9a9e1cca1b10a787bfabc603",
+    "tests/test_pilot02_lock.py": "d23ec52081d411b43511c47c8b301b1c76c8bc4df7b4e57a3bd54704a6036dbd",
+    ".github/workflows/pilot02-endpoint-lock.yml": "ea38dc39b3dc12cf3ce0bafd2397524415cdfbebcc002c66df74ac28040bd533"
+  }
+}
