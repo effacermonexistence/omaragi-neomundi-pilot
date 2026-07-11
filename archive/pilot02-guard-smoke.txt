@@ -1,0 +1,1 @@
+Disposable guard smoke test; never merge.
