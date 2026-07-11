@@ -26,3 +26,4 @@ python3 -m unittest tests/test_pilot02_lock.py -v
 ```
 
 Passing verification proves that the checked-out artifact matches the frozen semantic contract and recorded hashes. It does not claim that future evidence can never justify a new, explicitly versioned protocol.
+ADVERSARIAL_TEST_ONLY
