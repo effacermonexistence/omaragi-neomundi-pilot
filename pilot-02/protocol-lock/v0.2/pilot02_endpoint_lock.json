@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "lock_id": "pilot02-endpoint-v0.2",
+  "status": "FROZEN_FOR_DEV_30",
+  "research_object": {
+    "question": "Can NeoMundi-informed REVAS improve runtime intervention decisions while producing measurable resource benefit under predeclared quality and safety non-inferiority constraints?",
+    "public_frame": "Runtime decision capability is the mechanism; quantified resource and economic impact is the outcome.",
+    "not_primary_alone": [
+      "RAW_TOKEN_REDUCTION",
+      "DECISION_ACCURACY"
+    ]
+  },
+  "study_level_primary": {
+    "type": "ORDERED_NONCOMPENSATORY_GATES",
+    "gates": [
+      {
+        "order": 1,
+        "id": "QUALITY_AND_SAFETY_NONINFERIORITY",
+        "rule": "Quality non-inferiority and every frozen severe-intervention safety threshold must pass.",
+        "compensation_allowed": false
+      },
+      {
+        "order": 2,
+        "id": "RESOURCE_AND_ECONOMIC_BENEFIT",
+        "rule": "Paired output-token benefit must satisfy the preregistered threshold and confidence rule, and total net cost including all instrumentation and intervention overhead must not increase.",
+        "compensation_allowed": false
+      }
+    ],
+    "positive_result_requires_all_gates": true,
+    "negative_but_informative_result_allowed": true
+  },
+  "tracks": {
+    "verifiable_output": {
+      "role": "PRIMARY_HARD_PROOF_TRACK",
+      "decision_endpoint_role": "CO_PRIMARY_WITH_STUDY_LEVEL_JOINT_OUTCOME",
+      "oracle_contract_required": true,
+      "oracle_contract": [
+        "FROZEN_REQUIREMENT_MAP",
+        "EXECUTABLE_VERIFIER",
+        "FROZEN_COMPLETION_OBLIGATIONS",
+        "ACCEPTABLE_STOP_INTERVAL",
+        "FROZEN_CHECKPOINT_SCHEDULE",
+        "ACTION_ORACLE",
+        "FAILURE_SEVERITY_MAP"
+      ],
+      "test_pass_alone_is_universal_oracle": false
+    },
+    "bounded_natural_language": {
+      "quality_authority": "PREREGISTERED_BLINDED_HUMAN_NONINFERIORITY_WITH_FIXED_AUTOMATED_EVIDENCE",
+      "decision_endpoint_role": "CONFIRMATORY_SECONDARY_MECHANISM_METRIC",
+      "decision_labels_are_independent_ground_truth": false,
+      "required_disclosure": "Decision labels derive from the bounded utility and sufficiency judgments used in quality evaluation and do not establish universal human utility."
+    }
+  },
+  "primary_action_lane": [
+    "CONTINUE",
+    "STOP",
+    "ABSTAIN"
+  ],
+  "separate_action_modules": [
+    "REGENERATE",
+    "ROUTE",
+    "ESCALATE"
+  ],
+  "h5_incremental_value": {
+    "question": "Does NeoMundi add measurable decision value beyond simple heuristics, REVAS without NeoMundi, and a cheaper direct substitute?",
+    "arms": [
+      "A_SIMPLE_HEURISTIC",
+      "B_REVAS_WITHOUT_NEOMUNDI",
+      "C_REVAS_WITH_NEOMUNDI",
+      "D_REVAS_WITH_DIRECT_SUBSTITUTE"
+    ],
+    "identity_constraints": [
+      "SAME_PROMPTS",
+      "SAME_SOURCE_OUTPUTS",
+      "SAME_CHECKPOINTS",
+      "SAME_ACTION_SCOPE",
+      "SAME_EVALUATION_RULES"
+    ],
+    "incremental_value_requires": [
+      "IMPROVEMENT_OVER_B_REVAS_WITHOUT_NEOMUNDI",
+      "IMPROVEMENT_OVER_D_DIRECT_SUBSTITUTE",
+      "ADDED_LATENCY_AND_COST_INCLUDED"
+    ]
+  },
+  "calibration_and_freeze": {
+    "dev_30_role": "CALIBRATION_ONLY",
+    "dev_30_may_establish_performance": false,
+    "calibration_items": [
+      "NUMERICAL_NONINFERIORITY_MARGIN",
+      "TOKEN_BENEFIT_THRESHOLD",
+      "CONFIDENCE_RULE",
+      "SEVERE_INTERVENTION_THRESHOLDS",
+      "CHECKPOINT_CADENCE",
+      "RATER_RELIABILITY_THRESHOLD"
+    ],
+    "calibration_source": "DEV_30_ONLY",
+    "locked_corpus_role": "EVALUATION_ONLY",
+    "locked_corpus_must_remain_unopened_until_full_freeze": true,
+    "post_open_endpoint_or_threshold_changes_allowed": false
+  },
+  "prohibited_drift": [
+    "RAW_TOKEN_REDUCTION_AS_SOLE_PRIMARY",
+    "DECISION_ACCURACY_AS_SOLE_PRIMARY",
+    "BOUNDED_NL_LABELS_PRESENTED_AS_UNIVERSAL_GROUND_TRUTH",
+    "POSITIVE_RESULT_WHEN_QUALITY_OR_SAFETY_FAILS",
+    "POSITIVE_RESULT_WHEN_NET_COST_INCREASES",
+    "REASONING_TOKEN_SCALING_USED_AS_VISIBLE_CONTINUATION_ORACLE",
+    "ENDPOINT_ONTOLOGY_CHANGE_AFTER_LOCKED_CORPUS_ACCESS",
+    "SILENT_IN_PLACE_EDIT_OF_V0_2"
+  ],
+  "change_control": {
+    "v0_2_edit_in_place_allowed": false,
+    "allowed_triggers_for_new_version": [
+      "EXTERNAL_PROTOCOL_CONTRADICTION",
+      "IMPLEMENTATION_IMPOSSIBILITY",
+      "PARTNER_APPROVED_CHANGE_REQUEST",
+      "DEV_30_EVIDENCE_REQUIRING_PREDECLARED_CALIBRATION_ONLY"
+    ],
+    "required_for_new_version": [
+      "NEW_VERSION_DIRECTORY",
+      "CHANGE_RECORD",
+      "RATIONALE",
+      "ENDPOINT_AND_POWER_IMPACT",
+      "CONTAMINATION_ASSESSMENT",
+      "APPROVAL_RECORD",
+      "NEW_INTEGRITY_MANIFEST"
+    ],
+    "silent_change_allowed": false
+  }
+}
