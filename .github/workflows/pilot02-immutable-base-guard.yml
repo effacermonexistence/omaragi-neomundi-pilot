@@ -1,0 +1,58 @@
+name: Pilot 02 immutable base guard
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  immutable-pilot02-v0-2:
+    name: immutable-pilot02-v0-2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out trusted base
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Reject changes to the frozen v0.2 authority
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "pull/${PR_NUMBER}/head:refs/remotes/pull/head"
+
+          mapfile -t changed < <(
+            git diff --name-only --no-renames \
+              "${BASE_SHA}" refs/remotes/pull/head --
+          )
+
+          violations=()
+          for path in "${changed[@]}"; do
+            case "${path}" in
+              AGENTS.md|\
+              .github/workflows/pilot02-endpoint-lock.yml|\
+              .github/workflows/pilot02-immutable-base-guard.yml|\
+              pilot-02/README.md|\
+              pilot-02/controltower-live-test-plan.md|\
+              pilot-02/protocol-lock/v0.2/*|\
+              tools/verify_pilot02_lock.py|\
+              tests/test_pilot02_lock.py)
+                violations+=("${path}")
+                ;;
+            esac
+          done
+
+          if ((${#violations[@]})); then
+            printf '%s\n' 'Pilot 02 v0.2 is immutable. Create a new version through CHANGE_CONTROL.md.'
+            printf 'blocked: %s\n' "${violations[@]}"
+            exit 1
+          fi
+
+          printf '%s\n' 'PILOT02_V0_2_IMMUTABLE_BASE_GUARD_OK'
